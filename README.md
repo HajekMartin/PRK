@@ -15,3 +15,4 @@
 - Unikátní bude operátor "|", který bude umožňovat rozdělení celého výrazu na více menších které budou na sobě plně nezávislé.
 - Každý z výrazů bude oddělen samostatně a nebudou mít na sebe vliv.
 - Povolené vstupy budou např.: (1+2)|(2+1), (1.1+0xA)|pow(1,1)|4+2*1.
+- Výraz nemůže začínat či končit "|".
