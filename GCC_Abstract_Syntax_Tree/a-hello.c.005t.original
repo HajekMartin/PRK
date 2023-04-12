@@ -1,0 +1,103 @@
+
+;; Function main (null)
+;; enabled by -tree-original
+
+@1      statement_list   0   : @2       1   : @3      
+@2      bind_expr        type: @4       vars: @5       body: @6      
+@3      return_expr      type: @4       expr: @7      
+@4      void_type        name: @8       algn: 8       
+@5      var_decl         name: @9       type: @10      scpe: @11     
+                         srcp: hello.c:7               init: @12     
+                         size: @13      algn: 32       used: 0       
+@6      statement_list   0   : @14      1   : @15     
+@7      modify_expr      type: @10      op 0: @16      op 1: @17     
+@8      type_decl        name: @18      type: @4      
+@9      identifier_node  strg: x        lngt: 1       
+@10     integer_type     name: @19      size: @13      algn: 32      
+                         prec: 32       sign: signed   min : @20     
+                         max : @21     
+@11     function_decl    name: @22      type: @23      srcp: hello.c:4      
+                         link: extern  
+@12     call_expr        type: @10      fn  : @24      0   : @25     
+                         1   : @25     
+@13     integer_cst      type: @26     int: 32
+@14     decl_expr        type: @4      
+@15     return_expr      type: @4       expr: @27     
+@16     result_decl      type: @10      scpe: @11      srcp: hello.c:4      
+                         note: artificial              size: @13     
+                         algn: 32      
+@17     integer_cst      type: @10     int: 0
+@18     identifier_node  strg: void     lngt: 4       
+@19     type_decl        name: @28      type: @10     
+@20     integer_cst      type: @10     int: -2147483648
+@21     integer_cst      type: @10     int: 2147483647
+@22     identifier_node  strg: main     lngt: 4       
+@23     function_type    size: @29      algn: 8        retn: @10     
+                         prms: @30     
+@24     addr_expr        type: @31      op 0: @32     
+@25     integer_cst      type: @10     int: 5
+@26     integer_type     name: @33      size: @34      algn: 128     
+                         prec: 128      sign: unsigned min : @35     
+                         max : @36     
+@27     modify_expr      type: @10      op 0: @16      op 1: @17     
+@28     identifier_node  strg: int      lngt: 3       
+@29     integer_cst      type: @26     int: 8
+@30     tree_list        valu: @4      
+@31     pointer_type     size: @37      algn: 64       ptd : @38     
+@32     function_decl    name: @39      type: @38      srcp: hello.c:7      
+                         body: undefined               link: extern  
+@33     identifier_node  strg: bitsizetype             lngt: 11      
+@34     integer_cst      type: @26     int: 128
+@35     integer_cst      type: @26     int: 0
+@36     integer_cst      type: @26     int: -1
+@37     integer_cst      type: @26     int: 64
+@38     function_type    size: @29      algn: 8        retn: @10     
+@39     identifier_node  strg: secti    lngt: 5       
+
+
+;; Function secti (null)
+;; enabled by -tree-original
+
+@1      bind_expr        type: @2       body: @3      
+@2      void_type        name: @4       algn: 8       
+@3      return_expr      type: @2       expr: @5      
+@4      type_decl        name: @6       type: @2      
+@5      modify_expr      type: @7       op 0: @8       op 1: @9      
+@6      identifier_node  strg: void     lngt: 4       
+@7      integer_type     name: @10      size: @11      algn: 32      
+                         prec: 32       sign: signed   min : @12     
+                         max : @13     
+@8      result_decl      type: @7       scpe: @14      srcp: hello.c:11     
+                         note: artificial              size: @11     
+                         algn: 32      
+@9      plus_expr        type: @7       op 0: @15      op 1: @16     
+@10     type_decl        name: @17      type: @7      
+@11     integer_cst      type: @18     int: 32
+@12     integer_cst      type: @7      int: -2147483648
+@13     integer_cst      type: @7      int: 2147483647
+@14     function_decl    name: @19      type: @20      srcp: hello.c:11     
+                         args: @15      link: extern  
+@15     parm_decl        name: @21      type: @7       scpe: @14     
+                         srcp: hello.c:11              argt: @7      
+                         size: @11      algn: 32       used: 1       
+@16     parm_decl        name: @22      type: @7       scpe: @14     
+                         srcp: hello.c:11              argt: @7      
+                         size: @11      algn: 32       used: 1       
+@17     identifier_node  strg: int      lngt: 3       
+@18     integer_type     name: @23      size: @24      algn: 128     
+                         prec: 128      sign: unsigned min : @25     
+                         max : @26     
+@19     identifier_node  strg: secti    lngt: 5       
+@20     function_type    size: @27      algn: 8        retn: @7      
+                         prms: @28     
+@21     identifier_node  strg: a        lngt: 1       
+@22     identifier_node  strg: b        lngt: 1       
+@23     identifier_node  strg: bitsizetype             lngt: 11      
+@24     integer_cst      type: @18     int: 128
+@25     integer_cst      type: @18     int: 0
+@26     integer_cst      type: @18     int: -1
+@27     integer_cst      type: @18     int: 8
+@28     tree_list        valu: @7       chan: @29     
+@29     tree_list        valu: @7       chan: @30     
+@30     tree_list        valu: @2      
+
