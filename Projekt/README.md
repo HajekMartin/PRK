@@ -1,6 +1,6 @@
 
 ## Operace - Mocnina
-- Bude se používat ve formátu pow(a,b), kde "a" je číslo, které bude umocněno číslem "b".
+- Bude se používat ve formátu a^b, kde "a" je číslo, které bude umocněno číslem "b".
 
 ## Datové typy - integer, hexadecimal, float
 ### Integer
@@ -14,5 +14,5 @@
 ## Něco unikátního - Operátor "|"
 - Unikátní bude operátor "|", který bude umožňovat rozdělení celého výrazu na více menších které budou na sobě plně nezávislé.
 - Každý z výrazů bude oddělen samostatně a nebudou mít na sebe vliv.
-- Povolené vstupy budou např.: (1+2)|(2+1)|(1.1+0xa)|pow(1,1)|4+2*1.
+- Povolené vstupy budou např.: (1+2)|(2+1)|(1.1+0xa)|1^1|4+2*1.
 - Výraz nemůže začínat či končit "|".
