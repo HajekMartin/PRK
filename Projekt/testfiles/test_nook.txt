@@ -1,0 +1,37 @@
+#Test lexikálního analyzátoru
+More_to_je_blbe
+
+#Sčítání
+1+1+
+1+
++1
+
+#Násobení
+1*
+*1
+1*1*
+
+#Mocnina
+pow(1)
+pow(,1)
+pow(1,)
+pow()
+
+#Float
+1.
+11.1.1
+.11
+
+#Hexadecimal
+0x1.1
+0x0xa1
+
+#Chybné multipleexpression operátor
+1|1|
+|1|1
+|1|
+
+#Chybné závorky
+((10+10)*10)*(10+10))
+(((10+10)*10)*(10+10)
+10+10)*10)*(10+10)

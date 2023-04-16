@@ -1,6 +1,6 @@
 
 ## Operace - Mocnina
-- Bude se používat ve formátu pow(a, b), kde "a" je číslo, které bude umocněno číslem "b".
+- Bude se používat ve formátu pow(a,b), kde "a" je číslo, které bude umocněno číslem "b".
 
 ## Datové typy - integer, hexadecimal, float
 ### Integer
