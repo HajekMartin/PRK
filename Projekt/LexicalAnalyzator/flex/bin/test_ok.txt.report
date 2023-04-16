@@ -9,6 +9,7 @@ Void line detected.
 Line detected.
 Line detected.
 Line detected.
+Line detected.
 Void line detected.
 Line detected.
 Line detected.
@@ -29,12 +30,12 @@ Line detected.
 Line detected.
 0 of total errors detected in input file.
 ***Datatypes***
-64 of integer numbers detected.
+54 of integer numbers detected.
 3 of hexadecimal numbers detected.
 4 of float numbers detected.
 ***Operators***
 19 of add operators detected.
-5 of power operators detected.
+6 of power operators detected.
 14 of multiplication operators detected.
 ***Others***
 11 of left bracket operators detected.
@@ -44,5 +45,5 @@ Line detected.
 8 of comment lines canceled.
 7 of void lines ignored.
 File processed sucessfully.
-Totally 22 of valid code lines in file processed.
+Totally 23 of valid code lines in file processed.
 File processed sucessfully.

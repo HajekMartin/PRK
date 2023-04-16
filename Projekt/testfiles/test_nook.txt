@@ -12,10 +12,9 @@ More_to_je_blbe
 1*1*
 
 #Mocnina
-pow(1)
-pow(,1)
-pow(1,)
-pow()
+1^
+^1
+^
 
 #Float
 1.
