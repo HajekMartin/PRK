@@ -1,5 +1,5 @@
-//#define VERBOSE 1 
-#undef VERBOSE 
+#define VERBOSE
+//#undef VERBOSE 
 
 #define _CPP_IOSTREAMS y
 

@@ -118,7 +118,7 @@ return 1;
 
 void print_msg(char *msg){
     #ifdef VERBOSE
-        printf("%s",msg);
+        //printf("%s",msg);
     #endif
 }
 

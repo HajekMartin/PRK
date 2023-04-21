@@ -44,38 +44,33 @@ lang:
     ;
 
 multiexpression:
-    expression                              { debug_print("[OK] 3"); }
-    | expression MULTIEXPRESSION expression { debug_print("[OK] 4"); }
-    |                                       { debug_print("[OK] 5"); }
+    expression                                      { debug_print("[OK] 3"); }
+    | expression MULTIEXPRESSION multiexpression    { debug_print("[OK] 4"); }
+ // |                                               { debug_print("[OK] 5"); }
     ;
 
 expression:
-    term
-    | PLUS term expression                        { debug_print("[OK] 5"); }
-    | term PLUS expression                        { debug_print("[OK] 6"); }
-    |                                       { debug_print("[OK] 7"); }
+    term                    { debug_print("[OK] 6"); }
+    | term PLUS expression  { debug_print("[OK] 7"); }
+  //|                       { debug_print("[OK] 8"); }
     ;
 
 term:   
-    //power{ debug_print("[OK] 8"); }
-     MPY power term                         { debug_print("[OK] 9"); }
-     |power
-    //| power MPY power                       { debug_print("[OK] 10"); }
-    //| MPY power 
-    | { debug_print("[OK] 11"); }
+    power{ debug_print("[OK] 8"); } { debug_print("[OK] 9"); }
+    | power MPY term                { debug_print("[OK] 10"); }
+  //|                               { debug_print("[OK] 11"); }
     ;
 
 power:
-    factor                                  { debug_print("[OK] 12"); }
-    | POWER factor power
-    | factor POWER power                   { debug_print("[OK] 13"); }
-    //|                                       { debug_print("[OK] 14"); }
+    factor                  { debug_print("[OK] 12"); }
+    | factor POWER power    { debug_print("[OK] 13"); }
+  //|                       { debug_print("[OK] 14"); }
     ;
 
 factor:
     number                                  { debug_print("[OK] 15"); }
     | L_BR expression R_BR                  { debug_print("[OK] 16"); }
-    |                                       { debug_print("[OK] 17"); }
+  //|                                       { debug_print("[OK] 17"); } nevím úplně spíš nemá být
     ;
 
 number: 
@@ -85,8 +80,6 @@ number:
     ;
 
 %%
-
-
 
 void yyerror(const char* s) {   
     printf("%s\n",s);
@@ -102,7 +95,5 @@ void main(){
     // yydebug = 1;
     debug_print("Entering the main");
     yyparse();
-    
-    
 }
 
