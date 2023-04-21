@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 16
-#define YY_END_OF_BUFFER 17
+#define YY_NUM_RULES 17
+#define YY_END_OF_BUFFER 18
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,29 +360,29 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[28] =
+static const flex_int16_t yy_accept[30] =
     {   0,
-        0,    0,   17,   15,   13,   15,    5,    6,    3,    2,
-       10,   10,    4,    7,   11,   15,   15,   14,    0,   10,
-        0,   12,    0,    1,    9,    8,    0
+        0,    0,   18,   16,   15,   13,   16,    4,    5,    3,
+        2,   10,   10,    6,    7,   11,   16,   16,   15,   14,
+        0,   10,    0,   12,    0,    1,    8,    9,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
-        1,    1,    3,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
+        1,    1,    4,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    4,    1,    1,    1,    1,    5,
-        6,    7,    8,    1,    1,    9,    1,   10,   11,   11,
-       11,   11,   11,   11,   11,   11,   11,    1,    1,    1,
+        1,    2,    1,    1,    5,    1,    1,    1,    1,    6,
+        7,    8,    9,    1,    1,   10,    1,   11,   12,   12,
+       12,   12,   12,   12,   12,   12,   12,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,   12,    1,    1,   13,   13,   13,   13,
+        1,    1,    1,   13,    1,    1,   14,   14,   14,   14,
 
-       13,   13,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,   14,
-        1,    1,    1,   15,    1,    1,    1,    1,    1,    1,
+       14,   14,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,   15,
+        1,    1,    1,   16,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -399,44 +399,46 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[16] =
-    {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
-        2,    1,    2,    1,    1
-    } ;
-
-static const flex_int16_t yy_base[30] =
-    {   0,
-        0,   14,   35,   36,   36,   32,   36,   36,   36,   36,
-       10,   19,   36,   36,   36,   30,   29,   36,   12,    0,
-        0,   36,   28,   36,   15,    0,   36,   26,   27
-    } ;
-
-static const flex_int16_t yy_def[30] =
-    {   0,
-       27,    1,   27,   27,   27,   27,   27,   27,   27,   27,
-       27,   11,   27,   27,   27,   27,   28,   27,   27,   12,
-       29,   27,   28,   27,   27,   29,    0,   27,   27
-    } ;
-
-static const flex_int16_t yy_nxt[52] =
-    {   0,
-        4,    5,    6,    4,    7,    8,    9,   10,    4,   11,
-       12,   13,    4,    4,   14,   15,   16,   17,   19,   20,
-       20,   25,   25,   21,   25,   25,   23,   23,   26,   24,
-       24,   22,   27,   18,   27,    3,   27,   27,   27,   27,
-       27,   27,   27,   27,   27,   27,   27,   27,   27,   27,
-       27
-    } ;
-
-static const flex_int16_t yy_chk[52] =
+static const YY_CHAR yy_meta[17] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    2,    2,    2,   11,   11,
-       11,   19,   19,   11,   25,   25,   28,   28,   29,   23,
-       17,   16,   12,    6,    3,   27,   27,   27,   27,   27,
-       27,   27,   27,   27,   27,   27,   27,   27,   27,   27,
-       27
+        2,    2,    1,    2,    1,    1
+    } ;
+
+static const flex_int16_t yy_base[32] =
+    {   0,
+        0,   14,   38,   39,   35,   39,   33,   39,   39,   39,
+       39,   10,   20,   39,   39,   39,   31,   30,   30,   39,
+       12,    0,    0,   39,   28,   39,   15,    0,   39,   27,
+       28
+    } ;
+
+static const flex_int16_t yy_def[32] =
+    {   0,
+       29,    1,   29,   29,   29,   29,   29,   29,   29,   29,
+       29,   29,   12,   29,   29,   29,   29,   30,   29,   29,
+       29,   13,   31,   29,   30,   29,   29,   31,    0,   29,
+       29
+    } ;
+
+static const flex_int16_t yy_nxt[56] =
+    {   0,
+        4,    5,    6,    7,    4,    8,    9,   10,   11,    4,
+       12,   13,   14,    4,    4,   15,   16,   17,   18,   21,
+       22,   22,   27,   27,   23,   27,   27,   25,   25,   28,
+       26,   19,   26,   24,   29,   20,   19,   29,    3,   29,
+       29,   29,   29,   29,   29,   29,   29,   29,   29,   29,
+       29,   29,   29,   29,   29
+    } ;
+
+static const flex_int16_t yy_chk[56] =
+    {   0,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    2,    2,    2,   12,
+       12,   12,   21,   21,   12,   27,   27,   30,   30,   31,
+       25,   19,   18,   17,   13,    7,    5,    3,   29,   29,
+       29,   29,   29,   29,   29,   29,   29,   29,   29,   29,
+       29,   29,   29,   29,   29
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -482,13 +484,17 @@ int multipleexpressions=0;
 int errors_detected=0;
 
 #include "lang.h"
+#include "y.tab.h"
+
 
 /* Function prototypes */
 
-int process_pattern(int number, char *Message);
+int process_pattern(int number, char *Message, int Pattern);
+void print_error(int ERRNO);
+void print_msg(char *msg);
 
-#line 491 "lex.yy.c"
-#line 492 "lex.yy.c"
+#line 497 "lex.yy.c"
+#line 498 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -708,9 +714,9 @@ YY_DECL
 		}
 
 	{
-#line 46 "lang.lex"
+#line 50 "lang.lex"
 
-#line 714 "lex.yy.c"
+#line 720 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -738,13 +744,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 28 )
+				if ( yy_current_state >= 30 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 36 );
+		while ( yy_base[yy_current_state] != 39 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -771,89 +777,135 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 47 "lang.lex"
-{lines_comment=process_pattern(lines_comment,"Comment deleted.\n");}
+#line 51 "lang.lex"
+{lines_comment=process_pattern(lines_comment,"Comment deleted.\n",PATT_NO);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 48 "lang.lex"
-{add_ops=process_pattern(add_ops,"Add operator detected.");}
+#line 52 "lang.lex"
+{
+        add_ops=process_pattern(add_ops,"Add operator detected.",PATT_PLUS);        
+        return PLUS; 
+        }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 49 "lang.lex"
-{mpy_ops=process_pattern(mpy_ops,"Multiplication operator detected.");}
+#line 56 "lang.lex"
+{
+        mpy_ops=process_pattern(mpy_ops,"Multiplication operator detected.",PATT_MPY);
+        return MPY;
+        }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 50 "lang.lex"
-{pow_ops=process_pattern(pow_ops,"Power operator detected.");}
+#line 60 "lang.lex"
+{
+        br_left=process_pattern(br_left,"Opening bracket detected.",PATT_L_BR);
+        return L_BR;
+        }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 52 "lang.lex"
-{br_left=process_pattern(br_left,"Opening bracket detected.");}
+#line 64 "lang.lex"
+{
+        br_right=process_pattern(br_right,"Closing bracket detected.", PATT_R_BR);
+        return R_BR;
+        } 
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 53 "lang.lex"
-{br_right=process_pattern(br_right,"Closing bracket detected.");} 
+#line 68 "lang.lex"
+{ 
+        pow_ops=process_pattern(pow_ops,"Power operator detected.", PATT_POWER);
+        return POWER;
+}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 54 "lang.lex"
-{multipleexpressions=process_pattern(multipleexpressions,"Multipleexpressions detected.");}
+#line 72 "lang.lex"
+{ 
+        multipleexpressions=process_pattern(multipleexpressions,"Multipleexpression detected.", PATT_MULTIEXPRESSION);
+        return MULTIEXPRESSION;
+}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 56 "lang.lex"
-{hexadecimal_numbers=process_pattern(hexadecimal_numbers,"Hexadecimal number detected.");}
+#line 76 "lang.lex"
+{
+        float_numbers=process_pattern(float_numbers,"Float number detected.", PATT_FLOAT);
+        return FLOAT;
+        } 
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 57 "lang.lex"
-{float_numbers=process_pattern(float_numbers,"Float number detected.");}
+#line 80 "lang.lex"
+{
+        hexadecimal_numbers=process_pattern(hexadecimal_numbers,"Binary number detected.", PATT_HEXADECIMAL);   
+        //yylval = atoi(yytext);              
+        return HEXADECIMAL;
+        }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 58 "lang.lex"
-{integer_numbers=process_pattern(integer_numbers,"Integer number detected.");}
+#line 85 "lang.lex"
+{
+        integer_numbers=process_pattern(integer_numbers,"Integer number detected.", PATT_INTEGER);   
+        //yylval = atoi(yytext);              
+        return INTEGER;
+        }
 	YY_BREAK
 case 11:
 /* rule 11 can match eol */
 YY_RULE_SETUP
-#line 60 "lang.lex"
-{void_lines_done++;printf("Void line detected.\n");}
+#line 90 "lang.lex"
+{        
+        void_lines_done++;        
+        print_msg("Void line detected.\n");}       
 	YY_BREAK
 case 12:
 /* rule 12 can match eol */
 YY_RULE_SETUP
-#line 61 "lang.lex"
-{void_lines_done++;printf("Void line detected.\n");}
+#line 93 "lang.lex"
+{        
+        void_lines_done++;        
+        print_msg("Void line detected.\n");}   
 	YY_BREAK
 case 13:
 /* rule 13 can match eol */
 YY_RULE_SETUP
-#line 62 "lang.lex"
-{lines_done++;printf("Line detected.\n");}
+#line 96 "lang.lex"
+{
+        lines_done++;
+        print_msg("Line detected.\n");
+        return LINE_END;
+        }
 	YY_BREAK
 case 14:
 /* rule 14 can match eol */
 YY_RULE_SETUP
-#line 63 "lang.lex"
-{lines_done++;printf("Line detected.\n");}
+#line 101 "lang.lex"
+{
+        lines_done++;
+        print_msg("Line detected.\n");
+        return LINE_END;
+        }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 64 "lang.lex"
-{errors_detected=process_pattern(errors_detected,"An error detected.\n");}
+#line 107 "lang.lex"
+; /*Skip whitespace*/
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 65 "lang.lex"
+#line 109 "lang.lex"
+{errors_detected=process_pattern(errors_detected,"An error detected.\n",PATT_ERR);} /* What is not from alphabet: lexer error  */
+	YY_BREAK
+case 17:
+YY_RULE_SETUP
+#line 110 "lang.lex"
 ECHO;
 	YY_BREAK
-#line 857 "lex.yy.c"
+#line 909 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1151,7 +1203,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 28 )
+			if ( yy_current_state >= 30 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1179,11 +1231,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 28 )
+		if ( yy_current_state >= 30 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 27);
+	yy_is_jam = (yy_current_state == 29);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1861,43 +1913,37 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 65 "lang.lex"
+#line 110 "lang.lex"
 
-/* Main part */
-int yywrap(){};
-int main()
-    {
-        yylex();
-        printf("%d of total errors detected in input file.\n",errors_detected);
-
-        printf("***Datatypes***\n");
-        printf("%d of integer numbers detected.\n",integer_numbers);
-        printf("%d of hexadecimal numbers detected.\n",hexadecimal_numbers);
-        printf("%d of float numbers detected.\n",float_numbers);
-
-        printf("***Operators***\n");
-        printf("%d of add operators detected.\n",add_ops);
-        printf("%d of power operators detected.\n",pow_ops);
-        printf("%d of multiplication operators detected.\n",mpy_ops);
-
-        printf("***Others***\n");
-        printf("%d of left bracket operators detected.\n",br_left);
-        printf("%d of right bracket operators detected.\n",br_right);
-        printf("%d of multipleexpression operators detected.\n",multipleexpressions);
-
-        printf("***Summary***\n");
-        printf("%d of comment lines canceled.\n",lines_comment);
-        printf("%d of void lines ignored.\nFile processed sucessfully.\n",void_lines_done);
-        printf("Totally %d of valid code lines in file processed.\nFile processed sucessfully.\n",lines_done);
-    }
 
 /* Function declaration */
 
-int process_pattern(int number,char* Message) {
-    #ifdef VERBOSE 
-        printf("%s",Message);
+int yywrap(void) {
+return 1;
+}
+
+
+void print_msg(char *msg){
+    #ifdef VERBOSE
+        printf("%s",msg);
     #endif
+}
+
+void print_error(int ERRNO){
+    #ifdef VERBOSE
+    char *message = Err_Messages[ERRNO];
+    printf("%s - %d - %s\n",ErrMsgMain,ERR_PATTERN,message);
+    #endif
+}
+
+int process_pattern(int number,char* Message, int Pattern) {
+    if (Pattern == PATT_ERR) {       
+        print_error(ERR_PATTERN);        
+        exit(ERR_PATTERN);
+    }    
+
+    print_msg(Message);
+    
     number++;
     return number;
 }
-
