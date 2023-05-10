@@ -1,0 +1,61 @@
+Current value is 10.000000
+The rule was: INTEGER
+Current value is 10.000000
+The rule was: number
+Current value is 10.000000
+The rule was: factor
+Current value is 10.000000
+The rule was: power
+Current value is 10.000000
+The rule was: INTEGER
+Current value is 10.000000
+The rule was: number
+Current value is 10.000000
+The rule was: factor
+Current value is 10.000000
+The rule was: INTEGER
+Current value is 10.000000
+The rule was: number
+Current value is 10.000000
+The rule was: factor
+Current value is 10.000000
+The rule was: power
+Current value is 100.000000
+The rule was: power MPY term
+Current value is 10.000000
+The rule was: INTEGER
+Current value is 10.000000
+The rule was: number
+Current value is 10.000000
+The rule was: factor
+Current value is 10.000000
+The rule was: power
+Current value is 10.000000
+The rule was: INTEGER
+Current value is 10.000000
+The rule was: number
+Current value is 10.000000
+The rule was: factor
+Current value is 2.000000
+The rule was: INTEGER
+Current value is 2.000000
+The rule was: number
+Current value is 2.000000
+The rule was: factor
+Current value is 2.000000
+The rule was: power
+Current value is 20.000000
+The rule was: power MPY term
+Current value is 20.000000
+The rule was: term
+Current value is 30.000000
+The rule was: term PLUS expression
+Current value is 130.000000
+The rule was: term PLUS expression
+Current value is 140.000000
+The rule was: term PLUS expression
+Current value is 140.000000
+The rule was: expression
+Syntax OK
+Current value is 140.000000
+The rule was: Lang2

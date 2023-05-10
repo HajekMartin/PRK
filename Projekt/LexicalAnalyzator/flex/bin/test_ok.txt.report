@@ -1,13 +1,13 @@
 Line detected.
 0 of total errors detected in input file.
 ***Datatypes***
-3 of integer numbers detected.
+0 of integer numbers detected.
 0 of hexadecimal numbers detected.
-0 of float numbers detected.
+3 of float numbers detected.
 ***Operators***
-0 of add operators detected.
+2 of add operators detected.
 0 of power operators detected.
-2 of multiplication operators detected.
+0 of multiplication operators detected.
 ***Others***
 0 of left bracket operators detected.
 0 of right bracket operators detected.
