@@ -76,18 +76,22 @@
 
 #define YYDEBUG 1
 
+//Můj Debug output
+//#define DEBUG_OUTPUT 1
+
 int yylex();
 void yyerror(const char *s);
 //extern int yylineno, yylval;
 
 void parser_out(const char* rule, float dolar) {
-    printf("Current value is %f\n", dolar);
-    printf("The rule was: %s\n", rule);
+    #ifdef DEBUG_OUTPUT
+        printf("Current value is %f\n", dolar);
+        printf(" - The rule was: %s\n", rule);
+    #endif
 }
 
 
-
-#line 91 "y.tab.c"
+#line 95 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -586,8 +590,8 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    37,    37,    38,    42,    43,    47,    48,    52,    53,
-      57,    58,    62,    63,    67,    68,    69
+       0,    41,    41,    42,    46,    47,    51,    52,    56,    57,
+      61,    62,    66,    67,    71,    72,    73
 };
 #endif
 
@@ -1158,97 +1162,97 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* lang: lang multiexpression LINE_END  */
-#line 37 "lang.y"
-                                    { printf("Syntax OK\n"); parser_out("Lang", yyval); }
-#line 1164 "y.tab.c"
+#line 41 "lang.y"
+                                    { yyval=yyvsp[-1]; printf("* Výsledek je %f\n", yyval); parser_out("Lang", yyval); }
+#line 1168 "y.tab.c"
     break;
 
   case 3: /* lang: multiexpression LINE_END  */
-#line 38 "lang.y"
-                                    { printf("Syntax OK\n"); parser_out("Lang2", yyval); }
-#line 1170 "y.tab.c"
+#line 42 "lang.y"
+                                    { yyval=yyvsp[-1]; printf("* Výsledek je %f\n", yyval); parser_out("Lang2", yyval); }
+#line 1174 "y.tab.c"
     break;
 
   case 4: /* multiexpression: expression  */
-#line 42 "lang.y"
+#line 46 "lang.y"
                                                     { yyval=yyvsp[0]; parser_out("expression", yyval); }
-#line 1176 "y.tab.c"
+#line 1180 "y.tab.c"
     break;
 
   case 5: /* multiexpression: expression MULTIEXPRESSION multiexpression  */
-#line 43 "lang.y"
+#line 47 "lang.y"
                                                     { yyval=yyvsp[-2]; parser_out("expression MULTIEXPRESSION multiexpression", yyval);  }
-#line 1182 "y.tab.c"
+#line 1186 "y.tab.c"
     break;
 
   case 6: /* expression: term  */
-#line 47 "lang.y"
+#line 51 "lang.y"
                             { yyval=yyvsp[0]; parser_out("term", yyval); }
-#line 1188 "y.tab.c"
+#line 1192 "y.tab.c"
     break;
 
   case 7: /* expression: term PLUS expression  */
-#line 48 "lang.y"
+#line 52 "lang.y"
                             { yyval=yyvsp[-2]+yyvsp[0]; parser_out("term PLUS expression", yyval);}
-#line 1194 "y.tab.c"
+#line 1198 "y.tab.c"
     break;
 
   case 8: /* term: power  */
-#line 52 "lang.y"
+#line 56 "lang.y"
                         { yyval=yyvsp[0]; parser_out("power", yyval); }
-#line 1200 "y.tab.c"
+#line 1204 "y.tab.c"
     break;
 
   case 9: /* term: power MPY term  */
-#line 53 "lang.y"
+#line 57 "lang.y"
                         { yyval=yyvsp[-2]*yyvsp[0]; parser_out("power MPY term", yyval); }
-#line 1206 "y.tab.c"
+#line 1210 "y.tab.c"
     break;
 
   case 10: /* power: factor  */
-#line 57 "lang.y"
+#line 61 "lang.y"
                             { yyval=yyvsp[0]; parser_out("factor", yyval); }
-#line 1212 "y.tab.c"
+#line 1216 "y.tab.c"
     break;
 
   case 11: /* power: factor POWER power  */
-#line 58 "lang.y"
+#line 62 "lang.y"
                             { yyval=pow(yyvsp[-2], yyvsp[0]); parser_out("factor POWER power", yyval); }
-#line 1218 "y.tab.c"
+#line 1222 "y.tab.c"
     break;
 
   case 12: /* factor: number  */
-#line 62 "lang.y"
+#line 66 "lang.y"
                             { yyval=yyvsp[0]; parser_out("number", yyval); }
-#line 1224 "y.tab.c"
+#line 1228 "y.tab.c"
     break;
 
   case 13: /* factor: L_BR expression R_BR  */
-#line 63 "lang.y"
-                            { yyval=(yyvsp[-2]); parser_out("L_BR expression R_BR", yyval); }
-#line 1230 "y.tab.c"
+#line 67 "lang.y"
+                            { yyval=(yyvsp[-1]); parser_out("L_BR expression R_BR", yyval); }
+#line 1234 "y.tab.c"
     break;
 
   case 14: /* number: HEXADECIMAL  */
-#line 67 "lang.y"
+#line 71 "lang.y"
                 { yyval=yyvsp[0]; parser_out("HEXADECIMAL", yyval); }
-#line 1236 "y.tab.c"
+#line 1240 "y.tab.c"
     break;
 
   case 15: /* number: FLOAT  */
-#line 68 "lang.y"
+#line 72 "lang.y"
                 { yyval=yyvsp[0]; parser_out("FLOAT", yyval); }
-#line 1242 "y.tab.c"
+#line 1246 "y.tab.c"
     break;
 
   case 16: /* number: INTEGER  */
-#line 69 "lang.y"
+#line 73 "lang.y"
                 { yyval=yyvsp[0]; parser_out("INTEGER", yyval); }
-#line 1248 "y.tab.c"
+#line 1252 "y.tab.c"
     break;
 
 
-#line 1252 "y.tab.c"
+#line 1256 "y.tab.c"
 
       default: break;
     }
@@ -1441,7 +1445,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 72 "lang.y"
+#line 76 "lang.y"
 
 
 void yyerror(const char* s) {   

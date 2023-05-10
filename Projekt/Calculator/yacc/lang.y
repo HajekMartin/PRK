@@ -6,15 +6,19 @@
 
 #define YYDEBUG 1
 
+//Můj Debug output
+//#define DEBUG_OUTPUT 1
+
 int yylex();
 void yyerror(const char *s);
 //extern int yylineno, yylval;
 
 void parser_out(const char* rule, float dolar) {
-    printf("Current value is %f\n", dolar);
-    printf("The rule was: %s\n", rule);
+    #ifdef DEBUG_OUTPUT
+        printf("Current value is %f\n", dolar);
+        printf(" - The rule was: %s\n", rule);
+    #endif
 }
-
 
 %}
 
@@ -34,8 +38,8 @@ void parser_out(const char* rule, float dolar) {
 %%
 
 lang:
-    lang multiexpression LINE_END   { printf("Syntax OK\n"); parser_out("Lang", $$); }
-    | multiexpression LINE_END      { printf("Syntax OK\n"); parser_out("Lang2", $$); }
+    lang multiexpression LINE_END   { $$=$2; printf("* Výsledek je %f\n", $$); parser_out("Lang", $$); }
+    | multiexpression LINE_END      { $$=$1; printf("* Výsledek je %f\n", $$); parser_out("Lang2", $$); }
     ;
 
 multiexpression:
@@ -60,7 +64,7 @@ power:
 
 factor:
     number                  { $$=$1; parser_out("number", $$); }
-    | L_BR expression R_BR  { $$=($1); parser_out("L_BR expression R_BR", $$); }
+    | L_BR expression R_BR  { $$=($2); parser_out("L_BR expression R_BR", $$); }
     ;
 
 number: 

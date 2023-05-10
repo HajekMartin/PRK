@@ -79,7 +79,7 @@ MULTIEXPRESSION     \|
 {FLOAT} {
         float_numbers=process_pattern(float_numbers,"Float number detected.\n", PATT_FLOAT);      
         yylval = atof(yytext);
-        printf("LANG.LEX yytext: %s yylval: %f\n", yytext, yylval);
+        //printf("LANG.LEX yytext: %s yylval: %f\n", yytext, yylval); //Testovací výpis
         return FLOAT;
         } 
 {HEXADECIMAL} {
