@@ -1,12 +1,13 @@
 %{
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include <ctype.h>
 
 #define YYDEBUG 1
 
-//Můj Debug output
+// Můj Debug output
 //#define DEBUG_OUTPUT 1
 
 int yylex();
@@ -20,9 +21,49 @@ void parser_out(const char* rule, float dolar) {
     #endif
 }
 
+// Moje funkce pro výpis
+float* floatArray;
+int* position;
+
+void createFloatArray(int size, int start) { 
+    if (start == 0) {
+        free(floatArray);
+    }
+    // Size se zamozrejme meni na zaklade poctu toho kolik mam multiexpression - zde pouzivam 10 - pokud by se prevysilo spadlo by to kvuli chybe v pridani...
+    // Pokud bych chtel univerzalni muselo by se pridat zdvojnasobeni pole pokud bych dosahnul maxima
+    floatArray = (float*)malloc(size * sizeof(float));
+    if (floatArray == NULL) {
+        printf("Memory allocation failed.\n");
+    }
+    position = (int*)malloc(sizeof(int));
+    *position = 0;
+    return;
+}
+
+void addToArray(float number) {
+    #ifdef DEBUG_OUTPUT
+        printf("[addToArray] number: %f position: %i \n", number, *position);
+    #endif
+    floatArray[*position] = number;
+    (*position)++;
+}
+
+void printArray() {
+    printf("Output: ");
+    int i;
+    for (i = *position - 1; i >= 0; i--) {
+        printf("%f", floatArray[i]);
+        if (i != 0) {
+            printf("|");
+        }
+    }
+    printf("\n");
+}
+
+
 %}
 
-%define api.value.type {double}
+%define api.value.type {double} // Aby bylo všechno double prostě
 
 %token L_BR
 %token R_BR
@@ -38,13 +79,42 @@ void parser_out(const char* rule, float dolar) {
 %%
 
 lang:
-    lang multiexpression LINE_END   { $$=$2; printf("* Výsledek je %f\n", $$); parser_out("Lang", $$); }
-    | multiexpression LINE_END      { $$=$1; printf("* Výsledek je %f\n", $$); parser_out("Lang2", $$); }
+    lang multiexpression LINE_END { 
+            printArray(); // Výpis pole - jsem na konci gramatiky
+            createFloatArray(10, 0); // Vytvoření prázdeného pro další vstupy
+            $$=$2; 
+            #ifdef DEBUG_OUTPUT
+                printf("#1 lang: %f multiexpression:  %f\n", $1, $2);
+            #endif
+            parser_out("Lang", $$); 
+        } 
+    | multiexpression LINE_END { 
+            printArray(); // Výpis pole - jsem na konci gramatiky
+            createFloatArray(10, 0); // Vytvoření prázdeného pro další vstupy
+            $$=$1; 
+            #ifdef DEBUG_OUTPUT
+                printf("#2 multiexpression: %f\n", $1);
+            #endif
+            parser_out("Lang2", $$); 
+        } 
     ;
 
 multiexpression:
-    expression                                      { $$=$1; parser_out("expression", $$); }
-    | expression MULTIEXPRESSION multiexpression    { $$=$1; parser_out("expression MULTIEXPRESSION multiexpression", $$);  }
+    expression { 
+        addToArray($1); // Přidání do pole
+        #ifdef DEBUG_OUTPUT
+            printf("#3 expression: %f\n", $1);
+        #endif
+        $$=$1; parser_out("expression", $$); 
+    } 
+    | expression MULTIEXPRESSION multiexpression { 
+            addToArray($1); // Přidání do pole
+            #ifdef DEBUG_OUTPUT
+                printf("#4 expression: %f\n", $1);
+            #endif
+            $$=$1; parser_out("expression MULTIEXPRESSION multiexpression", $$);  
+            $$=$3; 
+        } 
     ;
 
 expression:
@@ -80,6 +150,7 @@ void yyerror(const char* s) {
 }
 
 void main(){
-    yydebug = 1;
+    createFloatArray(10, 1); // Vytvoření pole nového se start argumentem 1
+    yydebug = 0;
     yyparse();
 }

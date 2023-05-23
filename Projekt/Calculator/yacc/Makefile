@@ -27,9 +27,9 @@ parser:
 #	@make -s subclean
 
 test_ok:
-	@./$(BINDIR)/$(PARSER_BIN) < $(TESTDIR)/$(TEST_OK_FILE) >$(BINDIR)/$(TEST_OK_FILE)
+	@./$(BINDIR)/$(PARSER_BIN) < $(TESTDIR)/$(TEST_OK_FILE) >$(BINDIR)/$(TEST_OK_FILE).report
 test_nook:
-	@./$(BINDIR)/$(PARSER_BIN) < $(TESTDIR)/$(TEST_NOOK_FILE) >$(BINDIR)/$(TEST_NOOK_FILE)
+	@./$(BINDIR)/$(PARSER_BIN) < $(TESTDIR)/$(TEST_NOOK_FILE) >$(BINDIR)/$(TEST_NOOK_FILE).report
 
 subclean:
 	@rm -rf lex.yy.c
