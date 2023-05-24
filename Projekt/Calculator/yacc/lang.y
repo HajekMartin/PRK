@@ -52,14 +52,13 @@ void printArray() {
     printf("Output: ");
     int i;
     for (i = *position - 1; i >= 0; i--) {
-        printf("%f", floatArray[i]);
+        printf("%.6g", floatArray[i]); // %.6g - trailing zeros na 6 desetinných míst
         if (i != 0) {
             printf("|");
         }
     }
     printf("\n");
 }
-
 
 %}
 
@@ -112,8 +111,8 @@ multiexpression:
             #ifdef DEBUG_OUTPUT
                 printf("#4 expression: %f\n", $1);
             #endif
-            $$=$1; parser_out("expression MULTIEXPRESSION multiexpression", $$);  
             $$=$3; 
+            parser_out("expression MULTIEXPRESSION multiexpression", $$);  
         } 
     ;
 

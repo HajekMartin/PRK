@@ -77,7 +77,7 @@
 
 #define YYDEBUG 1
 
-//Můj Debug output
+// Můj Debug output
 //#define DEBUG_OUTPUT 1
 
 int yylex();
@@ -122,7 +122,7 @@ void printArray() {
     printf("Output: ");
     int i;
     for (i = *position - 1; i >= 0; i--) {
-        printf("%f", floatArray[i]);
+        printf("%.6g", floatArray[i]);
         if (i != 0) {
             printf("|");
         }
@@ -131,8 +131,7 @@ void printArray() {
 }
 
 
-
-#line 136 "y.tab.c"
+#line 135 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -631,8 +630,8 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    82,    82,    91,   103,   110,   121,   122,   126,   127,
-     131,   132,   136,   137,   141,   142,   143
+       0,    81,    81,    90,   102,   109,   120,   121,   125,   126,
+     130,   131,   135,   136,   140,   141,   142
 };
 #endif
 
@@ -1203,7 +1202,7 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* lang: lang multiexpression LINE_END  */
-#line 82 "lang.y"
+#line 81 "lang.y"
                                   { 
             printArray(); // Výpis pole - jsem na konci gramatiky
             createFloatArray(10, 0); // Vytvoření prázdeného pro další vstupy
@@ -1213,11 +1212,11 @@ yyreduce:
             #endif
             parser_out("Lang", yyval); 
         }
-#line 1217 "y.tab.c"
+#line 1216 "y.tab.c"
     break;
 
   case 3: /* lang: multiexpression LINE_END  */
-#line 91 "lang.y"
+#line 90 "lang.y"
                                { 
             printArray(); // Výpis pole - jsem na konci gramatiky
             createFloatArray(10, 0); // Vytvoření prázdeného pro další vstupy
@@ -1227,11 +1226,11 @@ yyreduce:
             #endif
             parser_out("Lang2", yyval); 
         }
-#line 1231 "y.tab.c"
+#line 1230 "y.tab.c"
     break;
 
   case 4: /* multiexpression: expression  */
-#line 103 "lang.y"
+#line 102 "lang.y"
                { 
         addToArray(yyvsp[0]); // Přidání do pole
         #ifdef DEBUG_OUTPUT
@@ -1239,90 +1238,90 @@ yyreduce:
         #endif
         yyval=yyvsp[0]; parser_out("expression", yyval); 
     }
-#line 1243 "y.tab.c"
+#line 1242 "y.tab.c"
     break;
 
   case 5: /* multiexpression: expression MULTIEXPRESSION multiexpression  */
-#line 110 "lang.y"
+#line 109 "lang.y"
                                                  { 
             addToArray(yyvsp[-2]); // Přidání do pole
             #ifdef DEBUG_OUTPUT
                 printf("#4 expression: %f\n", yyvsp[-2]);
             #endif
-            yyval=yyvsp[-2]; parser_out("expression MULTIEXPRESSION multiexpression", yyval);  
             yyval=yyvsp[0]; 
+            parser_out("expression MULTIEXPRESSION multiexpression", yyval);  
         }
-#line 1256 "y.tab.c"
+#line 1255 "y.tab.c"
     break;
 
   case 6: /* expression: term  */
-#line 121 "lang.y"
+#line 120 "lang.y"
                             { yyval=yyvsp[0]; parser_out("term", yyval); }
-#line 1262 "y.tab.c"
+#line 1261 "y.tab.c"
     break;
 
   case 7: /* expression: term PLUS expression  */
-#line 122 "lang.y"
+#line 121 "lang.y"
                             { yyval=yyvsp[-2]+yyvsp[0]; parser_out("term PLUS expression", yyval);}
-#line 1268 "y.tab.c"
+#line 1267 "y.tab.c"
     break;
 
   case 8: /* term: power  */
-#line 126 "lang.y"
+#line 125 "lang.y"
                         { yyval=yyvsp[0]; parser_out("power", yyval); }
-#line 1274 "y.tab.c"
+#line 1273 "y.tab.c"
     break;
 
   case 9: /* term: power MPY term  */
-#line 127 "lang.y"
+#line 126 "lang.y"
                         { yyval=yyvsp[-2]*yyvsp[0]; parser_out("power MPY term", yyval); }
-#line 1280 "y.tab.c"
+#line 1279 "y.tab.c"
     break;
 
   case 10: /* power: factor  */
-#line 131 "lang.y"
+#line 130 "lang.y"
                             { yyval=yyvsp[0]; parser_out("factor", yyval); }
-#line 1286 "y.tab.c"
+#line 1285 "y.tab.c"
     break;
 
   case 11: /* power: factor POWER power  */
-#line 132 "lang.y"
+#line 131 "lang.y"
                             { yyval=pow(yyvsp[-2], yyvsp[0]); parser_out("factor POWER power", yyval); }
-#line 1292 "y.tab.c"
+#line 1291 "y.tab.c"
     break;
 
   case 12: /* factor: number  */
-#line 136 "lang.y"
+#line 135 "lang.y"
                             { yyval=yyvsp[0]; parser_out("number", yyval); }
-#line 1298 "y.tab.c"
+#line 1297 "y.tab.c"
     break;
 
   case 13: /* factor: L_BR expression R_BR  */
-#line 137 "lang.y"
+#line 136 "lang.y"
                             { yyval=(yyvsp[-1]); parser_out("L_BR expression R_BR", yyval); }
-#line 1304 "y.tab.c"
+#line 1303 "y.tab.c"
     break;
 
   case 14: /* number: HEXADECIMAL  */
-#line 141 "lang.y"
+#line 140 "lang.y"
                 { yyval=yyvsp[0]; parser_out("HEXADECIMAL", yyval); }
-#line 1310 "y.tab.c"
+#line 1309 "y.tab.c"
     break;
 
   case 15: /* number: FLOAT  */
-#line 142 "lang.y"
+#line 141 "lang.y"
                 { yyval=yyvsp[0]; parser_out("FLOAT", yyval); }
-#line 1316 "y.tab.c"
+#line 1315 "y.tab.c"
     break;
 
   case 16: /* number: INTEGER  */
-#line 143 "lang.y"
+#line 142 "lang.y"
                 { yyval=yyvsp[0]; parser_out("INTEGER", yyval); }
-#line 1322 "y.tab.c"
+#line 1321 "y.tab.c"
     break;
 
 
-#line 1326 "y.tab.c"
+#line 1325 "y.tab.c"
 
       default: break;
     }
@@ -1515,7 +1514,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 146 "lang.y"
+#line 145 "lang.y"
 
 
 void yyerror(const char* s) {   
